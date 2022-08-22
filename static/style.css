@@ -1,0 +1,125 @@
+body {
+	font-family: Typewriter ;
+	background: #323232 ;
+	color: #ccc ;
+	text-align: justify ;
+	line-height: 1.5 ;
+}
+
+@font-face {
+	font-family: UAV-OSD ;
+	src: url("/fonts/UAV-OSD-Sans-Mono.ttf") ;
+}
+
+@font-face {
+	font-family: Typewriter ;
+	src: url("/fonts/MonospaceTypewriter.ttf") ;
+}
+
+ul.pages{
+	list-style: square;
+	color: #C2538E ;
+}
+
+hr {
+	border-style: dashed ;
+}
+
+main {
+	max-width: 800px ;
+	margin: auto ;
+}
+
+figcaption {
+	text-align: center ;
+}
+
+img {
+	max-height: 210px ;
+	max-width: 95% ;
+	border: 5px dashed #C2538E ;
+}
+img[src$='#center'] {
+	display: block ;
+	margin: auto ;
+}
+
+img[src$='#floatleft'] {
+	float: left ;
+	margin: auto ;
+}
+img[src$='#floatright'] {
+	float: right ;
+	margin: auto ;
+}
+%
+h1 {
+	margin-bottom: 0px ;
+	font-size: 30px ;
+}
+
+header h1 {
+	font-family: UAV-OSD ;
+	text-align: left ;
+	color: #F569B4 ;
+}
+
+footer {
+	text-align: center ;
+	clear: both ;
+}
+
+p {
+	color: #ccc ;
+}
+
+a {
+	color: #F7B4D7 ;
+	text-decoration: none ;
+}
+
+@keyframes cursor{
+	0% { background-color: #323232 ;}
+	50% { background-color: #F569B4 ;}
+	100% { background-color: #323232 ;}
+}
+
+.logo__cursor {
+    display: inline-block;
+    width: 25px;
+    height: 2.4rem;
+    background: #F569B4;
+    margin-left: 0.5em;
+    margin-bottom: -0.15rem ;
+    border-radius: 1px;
+    -webkit-animation: cursor 2s infinite;
+    animation: cursor 2s infinite;
+}
+
+p.dark {
+	color: #aaa ;
+	margin-top: 1px ;
+	margin-bottom: 1px ;
+}
+
+/* For TAGLIST.HTML */
+.taglist {
+	text-align: center ;
+	clear: both ;
+}
+
+/* For NEXTPREV.HTML */
+#nextprev {
+	/* The container for both the previous and next articles. */
+}
+#prevart {
+	float: left ;
+	text-align: left ;
+}
+#nextart {
+	float: right ;
+	text-align: right ;
+}
+#nextart,#prevart {
+	max-width: 33% ;
+}

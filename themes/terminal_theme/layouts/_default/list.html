@@ -1,0 +1,29 @@
+{{ partial "header.html" . -}}
+{{ partial "logo.html" .}}
+<article>
+{{ .Content -}}
+<ul class="pages">
+{{- range.Pages }}
+<li>
+	<h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+	<p class="dark"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> 
+	| {{ .ReadingTime }} minute read.</p>
+	<p style="margin-bottom: 5px;margin-top: 0px;">
+	{{ range .Params.tags}}
+	<a href="tags/{{ . | urlize }}">{{ . }}</a>
+	{{ end -}}
+	</p>
+	<a href="{{ .RelPermalink | absURL}}">
+	{{ with .Params.image}}
+	<img src="{{$.Site.Params.BaseURL}}/img/{{ . }}#center" alt="standard deck of cards" >
+	{{ end }}
+</a>
+	<p>- {{ .Params.summary }} - <a href="{{ .RelPermalink}}">Read More -> </a></p>
+	<br>
+</li>
+
+<hr>
+{{ end -}}
+</ul>
+</article>
+{{- partial "footer.html" . }}

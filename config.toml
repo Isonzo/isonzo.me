@@ -1,0 +1,4 @@
+baseURL = 'http://isonzo.me/'
+languageCode = 'en-us'
+title = 'isonzo.me'
+theme = 'terminal_theme'
