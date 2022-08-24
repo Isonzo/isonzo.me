@@ -1,4 +1,4 @@
 default:
 	hugo
-	rm -rf /srv/http/isonzo.me/*
-	mv public/* /srv/http/isonzo.me/
+	rm -rf /var/www/html/isonzo.me/*
+	mv public/* /var/www/html/isonzo.me/
