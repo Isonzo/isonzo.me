@@ -102,6 +102,10 @@ p.dark {
 	margin-bottom: 1px ;
 }
 
+code {
+	font-size: larger ;
+}
+
 /* For TAGLIST.HTML */
 .taglist {
 	text-align: center ;
