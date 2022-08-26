@@ -86,6 +86,15 @@ First, you'll have to find the main .conf file.
 In Arch, this is located in `/etc/httpd/conf/httpd.conf`  
 in Debian, it's placed in `/etc/apache2/apache2.conf`
 
-In Arch, you'll want to go to uncomment `#Include conf/extra/httpd-vhosts.conf`; simply delete the '#'.
+In Arch, you'll want to go to uncomment `#Include conf/extra/httpd-vhosts.conf`; simply delete the '#'.  
+In Debian, I didn't have to do anything, but in any case the relevant line is #IncludeOptional sites-enabled/\*.conf
 
+And now all you have to do is add your site's data to the VirtualHost.
+In Arch, you'll append VirtualHosts at the end of `conf/extra/httpd-vhosts.conf`
+The key parameters are **SiteName** and **DocumentRoot**.
+In Sitename, you simply put your sites url (for example, for this site I put __isonzo.me__.
+In DocumentRoot, you put the absolute path to your site, in my case it's /var/www/isonzo.me (or /srv/html/isonzo.me if I was on Arch).
+Notice the lack of a leading slash at the end.
+You may fill out the other data if you want, but it's not strictly necessary for getting your site up and running.
 
+Afterwards, you'll want to restart Apache to load in the new configurations
