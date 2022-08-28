@@ -1,12 +1,12 @@
 ---
 title: "Self Hosting for Dummies"
-date: 2022-08-21T19:38:02-04:00
+date: 2022-08-26T19:38:02-04:00
 tags: ['tutorial', 'tech']
 summary: 'A guide to self hosting your website by someone who has done it exactly once'
 image: 'apache_logo.png'
-draft: true
+draft: false
 ---
-{{<img caption="The process did not spark joy" alt="Apache Web Server" src="/img/apache_logo.png#center">}}
+{{<img caption="Actually pretty easy once you know exactly what to do." alt="Apache Web Server" src="/img/apache_logo.png#center">}}
 
 > _Disclaimer: This advice was written in part to commit to memory the process I had to go through to get this site up and running, and I do not guarantee anything whatsover, particularly regarding the quality of the advice.  
 > Follow this "guide" at your own risk_
@@ -97,4 +97,13 @@ In DocumentRoot, you put the absolute path to your site, in my case it's /var/ww
 Notice the lack of a leading slash at the end.
 You may fill out the other data if you want, but it's not strictly necessary for getting your site up and running.
 
-Afterwards, you'll want to restart Apache to load in the new configurations
+Afterwards, you'll want to restart Apache to load in the new configurations.
+You can do that using ´systemctl restart apache2.service´ in Debian or ´systemctl restart httpd.service´in Arch
+
+{{<img caption="Be the bad boy you always dreamt of, and attract all the ladies." alt="connection not secured" src="/img/connection_insecure.png#center">}}
+## Is the site finally done?
+All you have to do now is make your domain point to your router's ip, and you're done!
+Going to your domain should send you directly to your site, and you can have multiple sites!
+That's basically it.
+
+Some considerations you can take is setting up an https connection instead of an http connection, as well as making sure you don't show your directory when someone types your ip (once Virtual Hosts are set up). I leave this as an exercise to the interested party until potentially decide to update this post.
