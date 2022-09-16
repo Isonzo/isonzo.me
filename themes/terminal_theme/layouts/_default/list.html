@@ -10,7 +10,7 @@
 	| {{ .ReadingTime }} minute read.</p>
 	<p style="margin-bottom: 5px;margin-top: 0px;">
 	{{ range .Params.tags}}
-	<a href="tags/{{ . | urlize }}">{{ . }}</a>
+	<a href="/tags/{{ . | urlize }}">{{ . }}</a>
 	{{ end -}}
 	</p>
 	<a href="{{ .RelPermalink | absURL}}">
