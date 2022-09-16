@@ -10,6 +10,7 @@ draft: false
 
 > _Disclaimer: This advice was written in part to commit to memory the process I had to go through to get this site up and running, and I do not guarantee anything whatsover, particularly regarding the quality of the advice.  
 > Follow this "guide" at your own risk_
+
 ## So, you wanna be a strong and independent web dev who doesn't need no hosting service?
 Well, although I would always encourage taking this path for the independence or for the joy of learning, sometimes you just wanna _see_ the results **ASAP**, and unfortunately a hosting service is the most immediate solution.
 But what if you don't want to shell out your hard-earned cash on hosting? What if you could rather spend something infinitely more _expendable_, like your time and general well-being?
