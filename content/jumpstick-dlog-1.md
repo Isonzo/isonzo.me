@@ -33,5 +33,21 @@ It did not produce the results I wanted, so I instantly ditched the idea.
 Instead, I went for a KinematicBody2D to have finer control over the physics of my character.
 I wanted the movement to feel natural and fun, but also be _somewhat_ predictable.
 I felt that some predictability would be good despite the theme, so that a player could develop some intuition on calculating their jumps.
-I was taking inspiration from **Super Mario 64**'s development cycle, where they tried to make sure the movement by itself was fun before developing the rest of the game
+I was taking inspiration from **Super Mario 64**'s development cycle, where they tried to make sure the movement by itself was fun, smooth, and responsive.
+Once they achieved that, they said they ["knew they were halfway there."](https://shmuplations.com/mario64/).
+
+So I started with adding some gravity and a jump function that would run everytime the KinematicBody2D detected it was on the ground.
+I wanted the player to control it via rotation to direct this bounce, so it was a case of altering the character's rotation with the `A` and `D` keys.
+I then made a Vector2 pointing up, rotated it by the amount the player was rotated, and multiplied the vector by a JUMP_POWER variable.
+After that, I also added the player's previous `x` velocity, to simulate some inertia.
+A couple of tweaks later, I had some pretty fun movement to work with!
+
+To add some further complexity, I went with a shotgun  the player can both use to defeat enemies and to alter their velocity by using the recoil as some sort of knockback (think of Team Fortress 2's [_Force-a-Nature_](https://wiki.teamfortress.com/wiki/Force-A-Nature)).
+So by drawin a vector opposite of where the gun is being aimed, I'm able to multiply that direction vector with a KNOCKBACK value, add it to the velocity, and the player gets a small jolt!
+I think this'll help make the movement mechanics be a bit deeper than simply rotating the character at specific angles.
+
+## Making it look nice
+Now, I'm no artist. In fact, I'm rather terrible at drawing, which is why I try to focus away from art by either using free assets, or focusing on simple polygons.
+However, I do actually want to try to become more well rounded and _at the very least_ be able to do some programmer art.
+And so I boot up Aseprite and begin trying to make some sort of character.
 
