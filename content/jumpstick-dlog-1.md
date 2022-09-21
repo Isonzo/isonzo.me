@@ -50,4 +50,39 @@ I think this'll help make the movement mechanics be a bit deeper than simply rot
 Now, I'm no artist. In fact, I'm rather terrible at drawing, which is why I try to focus away from art by either using free assets, or focusing on simple polygons.
 However, I do actually want to try to become more well rounded and _at the very least_ be able to do some programmer art.
 And so I boot up Aseprite and begin trying to make some sort of character.
+Of course, I draw the arms on a seperate layer to later export it as a seperate sprite as I plan to rotate them individually.
 
+I take the time to whip up a quick a shotgun shell to spawn as a particle 0.25 seconds after a player shoots, to simulate the pump-action.
+I considered making the shot hitscan, but I found it simpler to make a generic bullet, which consists of a KinematicBody2D and a particle which emits a couple of particles rapidly as a trail.
+Notice the color gradient to make the last pixels be white instead for some added flair!
+
+### Ripping off TF2 once again...
+In TF2 one shotgun pellet is always guaranteed to be accurate, the rest may scatter about in a cone.
+Let's ~~steal~~ take inspiration from this system!
+
+To fire a shot, we want to ultimately spawn the appropiate of bullets.
+We can simply use a for loop going from 0 to 5, and if it's the first bullet, we fire normally, towards the mouse.
+Otherwise, add a slight deviation.
+We then organize bit masks and layers to ensure the player can't shoot himself.
+
+We've successfully used our generic bullets as a shotgun blast!
+
+
+## Wait a second, the gamejam you mentioned already finished!
+Ah, you certainly are an observant reader.
+
+I actually only developed this game mostly on a Sunday, the weekend the gamejam started.
+The rest of the time, I would write this article bit by bit as well, to close off the dev sessions, most weekdays only adding a little feature at the end of the day (say, the shotgun shell particle and making it spawn at an appropriate time).
+
+Unfortunately, I had a particularly rough week, both with work and social obligations, and so the game fell wayside a bit, with no way to make up for time.
+I could've been cheeky and just ommitted mention of the gamejam, but I got my primary inspiration from the game due to their theme, so I thought that would be disingenous just to make up stuff.  
+And so it remains...
+
+But nevertheless, I think the game concept is good enough to try and make a finished game out of it, since I genuinely have fun moving the character around in the little sandbox.
+So despite the time limit being long gone, I'll try my best to continue development for this game.
+It certainly feels more productive than banging my head against the wall with online real-time multiplayer!
+
+## What's next?
+In the end, what was added to the game was the movement and the shooting, with some barebones graphical niceties added in.
+What's next is to prepare a tileset to start building some levels, and try to establish some sort of graphical style for making assets.
+I'm quite partial to trying to make a 4 color palette work, but I'm no artist, so I'll have to wait and see.
