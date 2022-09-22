@@ -38,6 +38,7 @@ I wanted the movement to feel natural and fun, but also be _somewhat_ predictabl
 I felt that some predictability would be good despite the theme, so that a player could develop some intuition on calculating their jumps.
 I was taking inspiration from **Super Mario 64**'s development cycle, where they tried to make sure the movement by itself was fun, smooth, and responsive.
 Once they achieved that, they said they ["knew they were halfway there."](https://shmuplations.com/mario64/).
+{{<img caption="" alt="Backwards Long Jump" src="/img/blj.gif#center">}}
 
 So I started with adding some gravity and a jump function that would run everytime the KinematicBody2D detected it was on the ground.
 I wanted the player to control it via rotation to direct this bounce, so it was a case of altering the character's rotation with the `A` and `D` keys.
