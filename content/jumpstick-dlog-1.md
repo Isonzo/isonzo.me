@@ -1,11 +1,13 @@
 ---
 title: "Jumpstick Dlog #1"
 date: 2022-09-14T21:56:38-04:00
-tags: ['dev']
+tags: ['dev', 'godot']
 summary: A dev blog (dlog) for a quick game
-image:
+image: jumpstick_cover.png
 draft: true
 ---
+{{<img caption="Artist's rendition (pretend he's bouncing)" alt="Bouncing Shotgunning Protagonist" src="/img/jumpstick_cover.png#center">}}
+
 ## What's going on?
 So I decided to join the **"Godot Wild Jam #49"**, which had as a main theme **"Unstable"**.
 The biggest requirement for the jam is using the [Godot game engine](https://godotengine.org/), for which I'm using [version 3.5](https://godotengine.org/article/godot-3-5-cant-stop-wont-stop).
@@ -22,6 +24,7 @@ Of course, it initially seems like the opposite of unstable, as it depends on mo
 But it eventually led to me thinking about interesting movement mechanics, as that game was basically a dungeon crawler with its movement swapped by something non-traditional.
 Following that line of thought, I remember those little Bennet Foddy style games, one of which was PogoStuck.  
 Why not have something like that?
+{{<img caption="Aneurysm not included" alt="PogoStuck Screenshot" src="/img/pogostuck.jpeg#center">}}
 
 ## Let's get on with it!
 And so with a vague concept of how I want the movement, I boot up Godot with glee.  
