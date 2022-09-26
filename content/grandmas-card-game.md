@@ -3,10 +3,11 @@ title: "Grandma's Card Game"
 date: 2022-08-19T16:22:48-04:00
 tags: ['games', 'tutorial']
 summary: 'A 2-4 player card game with no name'
+image_dir: 'grandmas-card-game'
 image: 'Machovka_Cards.svg'
 draft: false
 ---
-{{<img caption="Obligatory Contextual Image" alt="A deck of cards" src="/img/Machovka_Cards.svg#center">}}
+{{<img caption="Obligatory Contextual Image" alt="A deck of cards" src="Machovka_Cards.svg#center">}}
 
 A card game my dearest grandmother showed me how to play, never learnt its name (she doesn't know what it's called), and I _constantly_ have to ask her the rules again since I don't have the opportunity to play it often.
 Now I finally decided to write it down!

@@ -3,10 +3,11 @@ title: "Self Hosting for Dummies"
 date: 2022-08-26T19:38:02-04:00
 tags: ['tutorial', 'tech']
 summary: 'A guide to self hosting your website by someone who has done it exactly once'
+image_dir: 'self-hosting-for-dummies'
 image: 'apache_logo.png'
 draft: false
 ---
-{{<img caption="Actually pretty easy once you know exactly what to do." alt="Apache Web Server" src="/img/apache_logo.png#center">}}
+{{<img caption="Actually pretty easy once you know exactly what to do." alt="Apache Web Server" src="apache_logo.png#center">}}
 
 > _Disclaimer: This advice was written in part to commit to memory the process I had to go through to get this site up and running, and I do not guarantee anything whatsover, particularly regarding the quality of the advice.  
 > Follow this "guide" at your own risk_
@@ -47,7 +48,7 @@ Once the service has started, you can check if it works by going to your localho
 You should something related to apache or some default site, it varies version to version. 
 If connection fails, be sure if the service is running.
 If apache is still being naughty, [you may need to do some investigative work.](https://www.google.com/search?q=help+apache+is+not+working&oq=help+apache+is+not+working)
-{{<img caption="It's alive!" alt="Debian Apache connection successful" src="/img/debian_apache_works.jpeg#center">}}
+{{<img caption="It's alive!" alt="Debian Apache connection successful" src="debian_apache_works.jpeg#center">}}
 
 You can actually view your website through apache now to debug your site and make sure it works. 
 If you're using a static site generator, like [Hugo](gohugo.io), this is a good way to verify that everything will work fine down the line and that there are no broken links or missing images.
@@ -57,7 +58,7 @@ In Debian, it's `/var/www/html/`
 
 People in your local network can now see your website if they enter your ip in the address bar!
 As long as you keep the apache server up, that is.
-{{<img caption="You might wanna chown or give permissions to facilitate frequent changes..." alt="mv /srv/hhtp/ permission denied" src="/img/permission_denied_srv.png#center">}}
+{{<img caption="You might wanna chown or give permissions to facilitate frequent changes..." alt="mv /srv/hhtp/ permission denied" src="permission_denied_srv.png#center">}}
 
 ### That's neat and all, but how do I get others to connect from _outside_ my network?
 Yes, yes, I realize you want the whole world to be able to see the inner machinations of your mind, and for that we need to start configuring a couple of different things.
@@ -101,7 +102,7 @@ You may fill out the other data if you want, but it's not strictly necessary for
 Afterwards, you'll want to restart Apache to load in the new configurations.
 You can do that using ´systemctl restart apache2.service´ in Debian or ´systemctl restart httpd.service´in Arch
 
-{{<img caption="Be the bad boy you always dreamt of, and attract all the ladies." alt="connection not secured" src="/img/connection_insecure.png#center">}}
+{{<img caption="Be the bad boy you always dreamt of, and attract all the ladies." alt="connection not secured" src="connection_insecure.png#center">}}
 ## Is the site finally done?
 All you have to do now is make your domain point to your router's ip, and you're done!
 Going to your domain should send you directly to your site, and you can have multiple sites!

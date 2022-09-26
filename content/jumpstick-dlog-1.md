@@ -3,10 +3,11 @@ title: "Jumpstick Dlog #1"
 date: 2022-09-25T17:07:38-04:00
 tags: ['dev', 'godot']
 summary: A dev blog (dlog) for a quick game
+image_dir: 'jumpstick-dlog-1'
 image: jumpstick_cover.png
 draft: false
 ---
-{{<img caption="Artist's rendition (pretend he's bouncing)" alt="Bouncing Shotgunning Protagonist" src="/img/jumpstick_cover.png#center">}}
+{{<img caption="Artist's rendition (pretend he's bouncing)" alt="Bouncing Shotgunning Protagonist" src="jumpstick_cover.png#center">}}
 
 ## What's going on?
 So I decided to join the **"Godot Wild Jam #49"**, which had as a main theme **"Unstable"**.
@@ -24,7 +25,7 @@ Of course, it initially seems like the opposite of unstable, as it depends on mo
 But it eventually led to me thinking about interesting movement mechanics, as that game was basically a dungeon crawler with its movement swapped by something non-traditional.
 Following that line of thought, I remember those little Bennet Foddy style games, one of which was PogoStuck.  
 Why not have something like that?
-{{<img caption="Aneurysm possibly included" alt="PogoStuck Screenshot" src="/img/pogostuck.jpeg#center">}}
+{{<img caption="Aneurysm possibly included" alt="PogoStuck Screenshot" src="pogostuck.jpeg#center">}}
 
 ## Let's get on with it!
 And so with a vague concept of how I want the movement, I boot up Godot with glee.  
@@ -38,7 +39,7 @@ I wanted the movement to feel natural and fun, but also be _somewhat_ predictabl
 I felt that some predictability would be good despite the theme, so that a player could develop some intuition on calculating their jumps.
 I was taking inspiration from **Super Mario 64**'s development cycle, where they tried to make sure the movement by itself was fun, smooth, and responsive.
 Once they achieved that, they said they ["knew they were halfway there."](https://shmuplations.com/mario64/).
-{{<img caption="" alt="Backwards Long Jump" src="/img/blj.gif#center">}}
+{{<img caption="" alt="Backwards Long Jump" src="blj.gif#center">}}
 
 So I started with adding some gravity and a jump function that would run everytime the KinematicBody2D detected it was on the ground.
 I wanted the player to control it via rotation to direct this bounce, so it was a case of altering the character's rotation with the `A` and `D` keys.
@@ -50,7 +51,7 @@ To add some further complexity, I went with a shotgun  the player can both use t
 So by drawin a vector opposite of where the gun is being aimed, I'm able to multiply that direction vector with a KNOCKBACK value, add it to the velocity, and the player gets a small jolt!
 I think this'll help make the movement mechanics be a bit deeper than simply rotating the character at specific angles.
 
-{{<img caption="BEHOLD" alt="Demonstration of movement mechanics" src="/img/jumpstick_move.gif#center" mouse="(Disabled Camera panning for more clarity...)">}}
+{{<img caption="BEHOLD" alt="Demonstration of movement mechanics" src="jumpstick_move.gif#center" mouse="(Disabled Camera panning for more clarity...)">}}
 
 ## Making it look nice
 Now, I'm no artist. In fact, I'm rather terrible at drawing, which is why I try to focus away from art by either using free assets, or focusing on simple polygons.
@@ -59,7 +60,7 @@ And so I boot up Aseprite and begin trying to make some sort of character.
 Of course, I draw the arms on a seperate layer to later export it as a seperate sprite as I plan to rotate them individually.
 
 I take the time to whip up a quick a shotgun shell to spawn as a particle 0.25 seconds after a player shoots, to simulate the pump-action.
-{{<img caption="Mastercraft pixel art" alt="Pixel art aseprite of a shotgun shell" src="/img/aseprite_shell.png#center" mouse="If it's simple, but it works...">}}
+{{<img caption="Mastercraft pixel art" alt="Pixel art aseprite of a shotgun shell" src="aseprite_shell.png#center" mouse="If it's simple, but it works...">}}
 I considered making the shot hitscan, but I found it simpler to make a generic bullet, which consists of a KinematicBody2D and a particle which emits a couple of particles rapidly as a trail.
 Notice the color gradient to make the last pixels be white instead for some added flair!
 
@@ -74,7 +75,7 @@ We then organize bit masks and layers to ensure the player can't shoot himself.
 
 We've successfully used our generic bullets as a shotgun blast!
 
-{{<img caption="Honestly this could be reduced a lot if I used the AnimationPlayer node..." alt="Code for shooting shotgun" src="/img/shoot_code.png#center" mouse="Yes, I did call randomize() at the start">}}
+{{<img caption="Honestly this could be reduced a lot if I used the AnimationPlayer node..." alt="Code for shooting shotgun" src="shoot_code.png#center" mouse="Yes, I did call randomize() at the start">}}
 
 ## Wait a second, the gamejam you mentioned already finished!
 Ah, you certainly are an observant reader.
