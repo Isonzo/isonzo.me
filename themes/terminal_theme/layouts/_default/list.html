@@ -14,9 +14,7 @@
 	{{ end -}}
 	</p>
 	<a href="{{ .RelPermalink | absURL}}">
-	{{ with .Params}}
-	<img src="{{$.Site.Params.BaseURL}}/img/{{ .Image_dir }}/{{ .Image }}#center" alt="standard deck of cards" >
-	{{ end }}
+	<img src="{{$.Site.Params.BaseURL}}/img/{{ .Params.Image_dir }}/{{ .Params.Image }}#center" alt="standard deck of cards" >
 </a>
 	<p>- {{ .Params.summary }} - <a href="{{ .RelPermalink}}">Read More -> </a></p>
 	<br>
