@@ -9,6 +9,11 @@ draft: false
 ---
 {{<img caption="Obligatory Contextual Image" alt="A deck of cards" src="Machovka_Cards.svg#center">}}
 
+>Many people have DM'd me enlightening me that the game is Gin Rummy, Rummy, or Canasta.
+>This game is just a variant of one of those, explained poorly.
+>I'll be leaving it up regardless.
+>Thanks to everyone that helped!
+
 A card game my dearest grandmother showed me how to play, never learnt its name (she doesn't know what it's called), and I _constantly_ have to ask her the rules again since I don't have the opportunity to play it often.
 Now I finally decided to write it down!
 
