@@ -38,6 +38,8 @@ img {
 	max-height: 300px ;
 	max-width: 95% ;
 	border: 5px dashed #C2538E ;
+	display: block ;
+	margin: auto ;
 }
 img[src$='#center'] {
 	display: block ;

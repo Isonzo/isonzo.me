@@ -7,7 +7,7 @@ image_dir: 'grandmas-card-game'
 image: 'Machovka_Cards.svg'
 draft: false
 ---
-{{<img caption="Obligatory Contextual Image" alt="A deck of cards" src="Machovka_Cards.svg#center">}}
+{{<img caption="Obligatory Contextual Image" alt="A deck of cards" src="Machovka_Cards.svg">}}
 
 >Many people have DM'd me enlightening me that the game is Gin Rummy, Rummy, or Canasta.
 >This game is just a variant of one of those, explained poorly.
