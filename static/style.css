@@ -48,11 +48,11 @@ img[src$='#center'] {
 
 img[src$='#floatleft'] {
 	float: left ;
-	margin: auto ;
+	margin: inherit ;
 }
 img[src$='#floatright'] {
 	float: right ;
-	margin: auto ;
+	margin: inherit ;
 }
 
 h1 {
