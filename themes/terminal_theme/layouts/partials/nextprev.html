@@ -1,9 +1,9 @@
-{{ if or .PrevPage .NextPage -}}
+{{ if or .Page.Prev .Page.Next -}}
 <div id="nextprev">
-{{- with .PrevPage }}
+{{- with .Page.Prev }}
 <a href="{{ .RelPermalink}}"><div id="prevart">Previous:<br>{{.Title}}</div></a>
 {{ end -}}
-{{- with .NextPage -}}
+{{- with .Page.Next -}}
 <a href="{{ .RelPermalink}}"><div id="nextart">Next:<br>{{.Title}}</div></a>
 {{ end -}}
 </div>
