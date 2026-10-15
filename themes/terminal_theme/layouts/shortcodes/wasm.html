@@ -1,0 +1,30 @@
+<!--
+    src: filename of the compiled javascript file
+    id: (optional) canvas id, defaults to "canvas"
+    class: (optional) class for the wrapper div
+-->
+<div {{ with .Get "class" }}class="{{.}}"{{ else }}style="display: flex; justify-content: center; margin: 2rem 0; background: #222; padding: 10px; border-radius: 8px;"{{ end }}>
+    <canvas id="{{ .Get "id" | default "canvas" }}" 
+            oncontextmenu="event.preventDefault()" 
+            tabindex="-1" 
+            style="border: 2px solid #444; border-radius: 4px; max-width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    </canvas>
+</div>
+
+<script type="text/javascript">
+  // Force Module into the global window scope
+  window.Module = window.Module || {};
+  
+  // Explicitly link the canvas element
+  window.Module.canvas = document.getElementById('{{ .Get "id" | default "canvas" }}');
+  
+  // Intercept the WebAssembly file request
+  window.Module.locateFile = function(path) {
+    if (path.endsWith('.wasm')) {
+      var srcDir = '{{ .Get "src" }}'.split('/').slice(0, -1).join('/');
+      return '/wasm/' + (srcDir ? srcDir + '/' : '') + path;
+    }
+    return path;
+  };
+</script>
+<script async type="text/javascript" src="/wasm/{{ .Get "src" }}"></script>
