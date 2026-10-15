@@ -2,3 +2,6 @@ baseURL = 'https://isonzo.me/'
 locale = 'en-us'
 title = 'isonzo.me'
 theme = 'terminal_theme'
+
+[markup.goldmark.renderer]
+unsafe = true
