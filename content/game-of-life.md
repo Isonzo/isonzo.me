@@ -33,19 +33,19 @@ For accuracy, I use a **Double-Pass Resolution**, which is just a nice way of sa
 
 ```c
 typedef struct {
-  bool isDead;
-  enum { unchanged, dying, birthing } state;
+  uint8_t state : 2;
+  uint8_t isDead : 1;
+  uint8_t age : 5; // 32 numbers
 } Cell;
 ```
-*(Each cell stores its current state and its future state)*
+*(Each cell stores its current state and its future state, leftover bits go to age for this implementation)*
 
 Most naive implementations juggle two entirely separate grid arrays: one for the current board state, and one to record the upcoming changes.
 Instead, I tied the future state directly to the cell object itself.
-This essentially allows the simulation to update accurately in place
+This essentially allows the simulation to update accurately in place.
 
 ### Why do this?
-You may note that this isn't really more memory efficient than doing the double buffer method.  
-So why do this?
+By using C bit-fields, it has all necessary data in a single byte, even allowing me to tack on extra states, the most immediate one coming to mind being age to give a bit of visualizing flair.
 
 #### Clean encapsulation
 The reality is that this gives a very clean encapsulation.
@@ -54,9 +54,10 @@ The code, in my opinion, [is fairly easy to read](https://github.com/Isonzo/Game
 #### Extensibility
 Additionally, it's trivial to add additional features should I want to, like changing colors based on life time, having some sort of infectious state that can get passed on, etc.
 A two array system would need potentially another array or something else to implement these changes, doing it my way keeps it simple.
+By assigning more bytes, imagine all the little features you could give!
 
-#### Cache Locality
-To be honest, this is kind of a reach, but technically since all of the states for each one of the cells are right next to each other, they're in the same cache line.
-Double buffer systems are in two different locations in RAM.
+#### Avoiding a second array
+Most Conway's Game of Life implementations have two full grids, one for the current frame and one for the next, so cells don't update while their neighbors are still being calculated.
+By temporarily storing the upcoming transition in the state bits, the program can calculate the future without needing to have the hassle of a second buffer.
 
 
